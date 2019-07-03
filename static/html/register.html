@@ -82,16 +82,23 @@
 
 
             <!-- 验证码-->
-            <div class="code">
-              <input type="text"  id="repawdss" maxlength="16" autocomplete="off"
+            <div class="code" style="width: 120px;"ss>
+              <input type="text"  id="textcode" maxlength="16" autocomplete="off"
                 placeholder="填写验证码" required />
                <!-- <div style="float: left;background-color: chartreuse;display: block;
                position: absolute;left: 200px;top: 0px; z-index: 100;
                ">验证码</div> -->
             </div>
             <div class="code" id="clickcode"
-            style="position: absolute; left: 190px;top:340px;background-color: crimson">
-            点击刷新验证码
+            style=" position: absolute; left: 170px;top:340px;background: repeating-linear-gradient(red 5%,yellow 10%,green 30%);
+            text-align: center;line-height: 46px;font-size: 18px;font-weight: 600">
+            
+            </div>
+
+            <div class="code" id="btncode" style="position: absolute; left: 240px;top:350px
+            ;border: none;text-align: end;cursor: pointer
+                        ;line-height: 46px;font-weight: 900">
+              点击刷新
             </div>
 
             <!-- 登陆按钮 -->
@@ -111,38 +118,65 @@
     </div>
 
     <script>
+          var code = parseInt(Math.random() * 10000)
+          var textcode = document.getElementById('textcode')
+          var clickcode = document.getElementById('clickcode')
+          var btncode = document.getElementById('btncode')
+          clickcode.innerHTML = code
+
+          btncode.onclick = function(ev){
+             ev.preventDefault()
+             
+             code = parseInt(Math.random() * 10000)
+             clickcode.innerHTML = code
+
+             
+          }
+
+          
+
+
          document.querySelector('form').onsubmit = function (e) {
             e.preventDefault()
-            // console.log(this)
+            if (textcode.value == code) {
+              var formData = new FormData(this)
+              fetch('/register', {
+                method: 'POST',
+                body: formData
+              }).then(res => res.json()).then(data => {
+                if (data.code == 200) {
+                  alert(data.mes)
+                  location = './'
+                } else if (data.code == -2) {
+                  alert(data.mes)
+                  document.getElementsByTagName('input')[1].value = ''
+                  document.getElementsByTagName('input')[2].value = ''
+                  document.getElementsByTagName('input')[1].focus()
+                }
+                else if (data.code == -3) {
+                  alert(data.mes)
+                  document.getElementsByTagName('input')[0].value = ''
+                  document.getElementsByTagName('input')[0].focus()
 
-            var formData = new FormData(this)
-            fetch('/register', {
-              method: 'POST',
-              body: formData
-            }).then(res => res.json()).then(data => {
-              if (data.code == 200) {
-                alert(data.mes)
-                location = './'
-              } else if (data.code == -2) {
-                alert(data.mes)
-                document.getElementsByTagName('input')[1].value = ''
-                document.getElementsByTagName('input')[2].value = ''
-                document.getElementsByTagName('input')[1].focus()
-              }
-              else if (data.code == -3) {
-                alert(data.mes)
-                document.getElementsByTagName('input')[0].value = ''
-                document.getElementsByTagName('input')[0].focus()
+                } else {
+                  alert('网络异常')
+                  document.getElementsByTagName('input')[0].value = ''
+                  document.getElementsByTagName('input')[1].value = ''
+                  document.getElementsByTagName('input')[2].value = ''
+                  document.getElementsByTagName('input')[0].focus()
+                }
+              })
 
-              } else {
-                alert('网络异常')
-                document.getElementsByTagName('input')[0].value = ''
-                document.getElementsByTagName('input')[1].value = ''
-                document.getElementsByTagName('input')[2].value = ''
-                document.getElementsByTagName('input')[0].focus()
-              }
-            })
+            }
+            else {
+              alert('验证码错误')
+            }
           }
+
+          
+
+
+
 
     </script>
   </body>
