@@ -1,4 +1,3 @@
-// {/* <script>window.onload = function() {};</script>; */}
 window.onload = function() {
   // 进入下面的选项卡，透明度变化
 
@@ -183,8 +182,6 @@ window.onload = function() {
     });
   }
 
-  // banner轮播图
-
   // 导航选项卡,鼠标悬浮 头部背景变白，a标签字体变黑
 
   var wrapTab = document.querySelector(".wrap-tab");
@@ -231,44 +228,93 @@ window.onload = function() {
     tabContent.style.height = 0;
   };
 
-  // bannner下面-list4个图片的特效 鼠标移入就透明度变化
-  var list4a = document.getElementsByClassName("lista");
-  for (let i = 0; i < list4a.length; i++) {
-    list4a[i].onmouseover = function() {
-      list4a[i].style.opacity = 0.8;
-      list4a[i].onmouseout = function() {
-        list4a[i].style.opacity = 1;
-      };
+  // 导航栏下面16th  部位  定位
+  var miaoshu = document.getElementById("miaoshu");
+  window.onscroll = function() {
+    let top = document.body.scrollTop || document.documentElement.scrollTop;
+    if (top >= 80) {
+      miaoshu.style.position = "fixed";
+      miaoshu.style.left = 0;
+      miaoshu.style.top = 0;
+      miaoshu.style.opacity = 0.8;
+      miaoshu.style.zIndex = 12;
+    } else {
+      miaoshu.style.position = "";
+      miaoshu.style.opacity = 1;
+    }
+  };
+
+  var zuoli = document.getElementsByClassName("xiali");
+  var zuoimg = document.getElementsByClassName("zuoimg");
+  for (let i = 0; i < zuoli.length; i++) {
+    zuoli[i].onclick = function() {
+      // zuoimg.forEach(function(item) {
+      //   item.classList.add(deop);
+      // });
+
+      for (var j = 0; j < zuoli.length; j++) {
+        // zuoimg[j].classList.add("deop");
+        fal(zuoimg[j], { opacity: 0 });
+      }
+      boxShadow(zuoli[i]);
+      fal(zuoimg[i], { opacity: 1 });
     };
   }
 
-  // banner下面的横屏banner2
+  var div99 = document.getElementById("div99");
+  var cityTab = document.getElementById("cityTab");
+  var citychange = document.getElementById("citychange");
+  var change = document.getElementById("change");
+  var div88 = document.getElementById("div88");
+  var div90 = document.getElementById("div90");
+  div99.onmouseover = function() {
+    cityTab.style.display = "block";
+  };
 
-  var banner2 = document.getElementsByClassName("banner2a");
-  var banner2img = document.getElementsByClassName("banner2img");
+  div99.onmouseout = function() {
+    cityTab.style.display = "";
+  };
+  var cityname = document.getElementsByClassName("cityname");
+  var textli = document.getElementsByClassName("textli");
 
-  for (let i = 0; i < banner2.length; i++) {
-    banner2[i].onmouseover = function() {
-      fal(banner2img[i], { opacity: 0.8 });
-      // banner2img[i].style.opacity = 0.9;
-      banner2[i].onmouseout = function() {
-        // banner2img[i].style.opacity = 1;
-        fal(banner2img[i], { opacity: 1 });
-      };
+  for (let i = 0; i < cityname.length; i++) {
+    cityname[i].onclick = function() {
+      var name = cityname[i].innerText;
+      for (let j = 0; j < textli.length; j++) {
+        textli[j].innerText = name;
+      }
     };
   }
+  citychange.onclick = function() {
+    div88.style.display = "block";
+    div90.style.display = "none";
+    div88.style.borderTop = 1 + "px" + " " + "solid" + " " + "black";
+    citychange.style.border = 1 + "px" + " " + "solid" + " " + "black";
+    change.style.border = 1 + "px" + " " + "solid" + " " + "#ccc";
+    change.style.borderBottom = 1 + "px" + " " + "solid" + " " + "black";
 
-  // 新品A,鼠标移入改变他的 阴影
-  var xinpinA = document.getElementsByClassName("xinpinA");
+    citychange.style.borderBottom = 2 + "px" + " " + "solid" + " " + "#eaecee";
+  };
+  change.onclick = function() {
+    div88.style.display = "none";
+    div90.style.display = "block";
+    div90.style.borderTop = 1 + "px" + " " + "solid" + " " + "black";
+    change.style.border = 1 + "px" + " " + "solid" + " " + "black";
+    citychange.style.border = 1 + "px" + " " + "solid" + " " + "#ccc";
+    citychange.style.borderBottom = 1 + "px" + " " + "solid" + " " + "black";
 
-  boxShadow(xinpinA);
+    change.style.borderBottom = 2 + "px" + " " + "solid" + " " + "#eaecee";
+  };
 
-  var lingjuana = document.getElementsByClassName("lingjuana");
-  boxShadow(lingjuana);
+  var cityname1 = document.getElementsByClassName("cityname1");
+  var textli1 = document.getElementsByClassName("textli1");
 
-  var retiea = document.getElementsByClassName("retiea");
-  boxShadow(retiea);
-
-  var flymea = document.getElementsByClassName("flymea");
-  boxShadow(flymea);
+  for (let i = 0; i < cityname1.length; i++) {
+    cityname1[i].onclick = function() {
+      var name1 = cityname1[i].innerText;
+      for (let j = 0; j < textli1.length; j++) {
+        textli1[j].innerText = name1;
+      }
+    };
+  }
 };

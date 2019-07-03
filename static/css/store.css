@@ -356,8 +356,191 @@
   background-color: #f6f8fb;
   border-top: 1px solid #eaecee;
   border-bottom: 1px solid #eaecee;
+  width: 100%;
 }
 
 #miaoshu a:hover {
   color: #347ff7;
+}
+
+#banner1 {
+  width: 100%;
+  height: 1160px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+#banner1zuo {
+  height: 734px;
+  width: 560px;
+
+  /* position: absolute; */
+  float: left;
+  position: relative;
+}
+
+#banner1you {
+  height: 1003px;
+  width: 640px;
+
+  float: right;
+}
+
+#aaaxia {
+  width: 536px;
+  height: 107px;
+
+  position: absolute;
+  left: 24px;
+  top: 580px;
+}
+
+#aaaxia li {
+  width: 80px;
+  height: 102px;
+  float: left;
+
+  cursor: pointer;
+  margin: 0 24px;
+}
+
+#aaaxia li img {
+  width: 80px;
+  height: 80px;
+}
+
+.zuoimg {
+  opacity: 0;
+  position: absolute;
+}
+.op {
+  opacity: 1;
+}
+
+.deop {
+  opacity: 0;
+}
+
+#cityTab {
+  width: 495px;
+  height: 243px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  background-color: #eaecee;
+  display: none;
+}
+
+.cityli {
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+
+  margin-top: 14px;
+}
+
+#div88 {
+  height: 206px;
+  border-top: 1px solid black;
+  padding-top: 10px;
+}
+
+#tab-daqing {
+  cursor: pointer;
+}
+
+.cityname {
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 40px;
+  font-size: 12px;
+}
+
+.cityname:hover {
+  background-color: #347ff7;
+}
+
+#div90 {
+  display: none;
+  height: 206px;
+  border-top: 1px solid black;
+  padding-top: 10px;
+}
+
+.cityname1 {
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 40px;
+  font-size: 12px;
+}
+
+.cityname1:hover {
+  background-color: #347ff7;
+}
+
+#kefu {
+  background-color: #ff4065;
+  margin-top: 4px;
+}
+
+#kefu img {
+  cursor: pointer;
+}
+
+.kuai {
+  width: 640px;
+  height: 104px;
+  float: left;
+}
+
+.kuaiziti {
+  width: 75px;
+  height: 52px;
+  font-size: 14px;
+  color: #babbc0;
+  text-align: justify;
+  line-height: 42px;
+
+  float: left;
+}
+
+.kuaili {
+  width: 178px;
+  height: 42px;
+  border: 1px solid #babbc0;
+  float: left;
+  margin-left: 5px;
+  margin-top: 5px;
+  text-align: center;
+  line-height: 42px;
+  color: #676767;
+  cursor: pointer;
+}
+
+.black {
+  border: 1px solid black;
+  color: black;
+}
+
+.huabei {
+  width: 178px;
+  height: 60px;
+  border: 1px solid #babbc0;
+  float: left;
+  margin-left: 5px;
+  margin-top: 5px;
+  text-align: center;
+  line-height: 60px;
+  color: #676767;
+  cursor: pointer;
+}
+
+.huabei p {
+  margin-top: 5px;
+  height: 18px;
+  font-size: 14px;
+  line-height: 18px;
 }
