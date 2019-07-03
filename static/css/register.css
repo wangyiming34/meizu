@@ -1,0 +1,272 @@
+.hide {
+  display: none;
+}
+.ucSimpleHeader {
+  /* height: auto; */
+  /* padding-top: 28px;
+  padding-bottom: 40px; */
+  height: 40px;
+  width: 1263px;
+}
+
+a.linkABlue:link,
+a.linkABlue:visited {
+  color: #387aff;
+}
+
+a.linkABlue:hover {
+  color: #3058df;
+  cursor: pointer;
+}
+
+a.fullBtnBlue {
+  background-color: #387aff;
+}
+
+a.fullBtnBlue:hover {
+  background-color: #3058df;
+}
+button.fullBtnBlue:hover {
+  background-color: #3058df;
+}
+
+.banner-box {
+  position: relative;
+
+  height: 750px;
+
+  background: #ffffff;
+}
+.banner-box .bg-box {
+  position: relative;
+  width: 1263px;
+  height: 680px;
+  margin: 0 auto;
+}
+
+.main-form {
+  width: 298px;
+  height: 450px;
+  position: absolute;
+  top: 17%;
+  right: 85px;
+  background-color: #fff;
+  padding: 35px 35px 10px;
+  border-radius: 4px;
+}
+
+.main-form .normalInput {
+  margin-bottom: 20px;
+}
+
+#toLogin {
+  color: #2b2b2b;
+}
+.rememberField {
+  margin-bottom: 25px;
+  height: 24px;
+  line-height: 20px;
+}
+.rememberField label {
+  margin-right: 7px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #7f7f7f;
+}
+.rememberField label:hover {
+  color: #000000;
+}
+.rememberFieldForA {
+  margin-left: 90px;
+}
+.checkboxPic {
+  width: 20px;
+}
+
+.transferField:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.go2forgetpwd {
+  float: right;
+}
+
+#password {
+  width: 100%;
+  display: inline-block;
+  /*height: 50px;*/
+  line-height: 22px;
+  font-size: 14px;
+  outline: none;
+  color: #474747;
+  line-height: 25px;
+  line-height: 0px;
+  line-height: 50px\0;
+}
+
+.tab-title {
+  font-size: 18px;
+  margin-top: 20px;
+  width: 300px;
+  text-align: center;
+}
+.register-line {
+  color: #b3abab;
+  display: inline-block;
+  border: 2px solid #b3abab;
+  border-left: 1px;
+  height: 10px;
+  line-height: 20px;
+  margin-right: 32px;
+  margin-left: 32px;
+}
+
+#header img {
+  height: 68px;
+}
+#header {
+  height: 68px;
+  padding: 0;
+}
+
+#footer {
+  background-color: #ffffff;
+  height: 110px;
+  width: 1260px;
+  bottom: 0px;
+  /* background: url() no-repeat center; */
+}
+body {
+  background: none;
+  background-color: white;
+
+  font-size: 14px;
+  color: #515151;
+  margin: 0;
+  padding: 0;
+}
+
+body input,
+body textarea {
+  background-color: white;
+  outline: none;
+}
+
+div,
+h1,
+h2,
+h3,
+h4,
+p,
+form,
+label,
+input,
+textarea,
+img,
+span,
+dl,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+}
+
+a {
+  color: #2b8cc5;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2b8cc5;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+a.fullBtnBlue:hover {
+  background-color: #2b8cc5;
+  color: #fff;
+}
+
+button.fullBtnBlue {
+  width: 300px;
+  display: block;
+  height: 46px;
+  font-size: 14px;
+  line-height: 46px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  cursor: pointer;
+  background-color: #32a5e7;
+  color: #fff;
+  border-radius: 4px;
+}
+
+input.emptyInput {
+  color: #32a5e7;
+}
+
+.normalInput {
+  width: 276px;
+  position: relative;
+  padding: 0px 10px;
+  height: 46px;
+  line-height: 22px;
+  font-size: 14px;
+  margin-bottom: 26px;
+  border: 1px solid #dadada;
+  outline: none;
+  color: #474747;
+  overflow: hidden;
+  line-height: 50px;
+}
+
+.code {
+  width: 100px;
+
+  padding: 0px 10px;
+  height: 46px;
+  line-height: 22px;
+  font-size: 14px;
+  margin-bottom: 26px;
+  border: 1px solid #dadada;
+  outline: none;
+  color: #474747;
+
+  overflow: hidden;
+  line-height: 50px;
+}
+
+.normalInput input {
+  font-size: 14px;
+  width: 94%;
+  height: 46px;
+  height: 34px;
+  line-height: 22px;
+  line-height: 50px;
+  line-height: 0px;
+  line-height: 50px\0;
+}
+
+.normalInput .kapkey {
+  line-height: 50px;
+}
+
+span.inputTip {
+  position: absolute;
+  top: 13px;
+  left: 10px;
+  color: #909090;
+  font-size: 14px;
+  height: 22px;
+  line-height: 22px;
+}

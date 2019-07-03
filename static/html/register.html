@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="欢迎登录和注册 Flyme 账号，您可以体验手机云服务功能，包括：在线下载应用，同步手机数据和查找手机等，让您的手机管理更加智能。"
+    />
+    <meta
+      name="keywords"
+      content="魅族  meizu 登录flyme 云服务  查找手机  充值账号  MX M9 MX2 MX3"
+    />
+
+    <title>Flyme 账号 - 注册</title>
+    <link rel="stylesheet" href="css/register.css" />
+    <link rel="shortcut icon" href="https://www3.res.meizu.com/static/cn/global/images/favicon_2e71785.ico"
+          type="image/x-icon">
+    
+  </head>
+
+  <body>
+    <div id="content" class="content">
+      <div class="ucSimpleHeader" id="header">
+        <a href="" class="meizuLogo"
+          ><img style="width: 1268px; " src="./images/login-head.png" alt=""
+        /></a>
+      </div>
+      <div class="banner-box">
+        <div
+          class="bg-box"
+          style="background: url(./images/login-banner.png) no-repeat center;"
+        >
+          <form id="mainForm" class="main-form">
+            <!-- 登陆样式 -->
+            <div class="tab-title">
+              <a
+                class="linkABlack"
+                id="toAccountLogin"
+                href="javascript:void(0);"
+                style="color: dodgerblue;"
+                >注册Flyme账号</a
+              >
+            </div>
+            <br />
+            <br />
+            <br />
+            <!-- 注册登陆账号 -->
+            <div class="normalInput cycode-box fieldInput" id="cycode-box">
+              <div class="cycode-selectbox">
+                <input
+                  class="ipt-account inp-focus"
+                  name="username"
+                  id="account"
+                  maxlength="50"
+                  placeholder="Flyme 账号"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+            </div>
+            <!-- 注册登陆密码 -->
+            <div class="normalInput fieldInput">
+              <input
+                type="password"
+                class="inp-focus"
+                name="password"
+                id="password"
+                maxlength="16"
+                autocomplete="off"
+                placeholder="密码"
+                required
+              />
+            </div>
+
+            <div class="normalInput fieldInput">
+                <input type="password" class="inp-focus" name="repasswd" id="repasswd" maxlength="16" autocomplete="off"
+                    placeholder="请确认密码" required/>
+            </div>
+
+
+
+            <!-- 验证码-->
+            <div class="code">
+              <input type="text"  id="repawdss" maxlength="16" autocomplete="off"
+                placeholder="填写验证码" required />
+               <!-- <div style="float: left;background-color: chartreuse;display: block;
+               position: absolute;left: 200px;top: 0px; z-index: 100;
+               ">验证码</div> -->
+            </div>
+            <div class="code" id="clickcode"
+            style="position: absolute; left: 190px;top:340px;background-color: crimson">
+            点击刷新验证码
+            </div>
+
+            <!-- 登陆按钮 -->
+            <button id="login" class="fullBtnBlue">立即注册</button>
+            <!-- <a id="login" class="fullBtnBlue">立即注册</a> -->
+       
+              <!-- 登陆按钮 -->
+              <a href="/login" class="go2register linkABlue" id="toRegister" style="color: dodgerblue">登陆</a>
+            </div>
+          </form>
+        </div>
+
+        <div id="footer">
+          <img src="./images/login-footer.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+         document.querySelector('form').onsubmit = function (e) {
+            e.preventDefault()
+            // console.log(this)
+
+            var formData = new FormData(this)
+            fetch('/register', {
+              method: 'POST',
+              body: formData
+            }).then(res => res.json()).then(data => {
+              if (data.code == 200) {
+                alert(data.mes)
+                location = './'
+              } else if (data.code == -2) {
+                alert(data.mes)
+                document.getElementsByTagName('input')[1].value = ''
+                document.getElementsByTagName('input')[2].value = ''
+                document.getElementsByTagName('input')[1].focus()
+              }
+              else if (data.code == -3) {
+                alert(data.mes)
+                document.getElementsByTagName('input')[0].value = ''
+                document.getElementsByTagName('input')[0].focus()
+
+              } else {
+                alert('网络异常')
+                document.getElementsByTagName('input')[0].value = ''
+                document.getElementsByTagName('input')[1].value = ''
+                document.getElementsByTagName('input')[2].value = ''
+                document.getElementsByTagName('input')[0].focus()
+              }
+            })
+          }
+
+    </script>
+  </body>
+</html>
