@@ -145,7 +145,7 @@
               }).then(res => res.json()).then(data => {
                 if (data.code == 200) {
                   alert(data.mes)
-                  location = './'
+                  location = '/login'
                 } else if (data.code == -2) {
                   alert(data.mes)
                   document.getElementsByTagName('input')[1].value = ''

@@ -125,14 +125,14 @@
           <ul>
             <a href="/login"><li id="loginLi" class="iconfont icon-huiyuan wraplogini"
               style="font-size: 30px; color:#ffffff;"></li></a>
-
+              
           </ul>
           <div class="wrap-login-content">
             <div id="wrap-login-licontent" class="lili">
               <a href="/login" class="logina">立即登录</a>
               <a href="/register" class="logina">立即注册</a>
-              <a href="" class="logina">我的订单</a>
-              <a href="" class="logina">M码通道</a>
+              <a href="#" class="logina">我的订单</a>
+              <a href="#" class="logina">M码通道</a>
             </div>
           </div>
         </div>
@@ -1087,31 +1087,11 @@
    
 
     <script>
-      setTimeout(function(){
-        var cookies = document.cookie;
-        var touxiang = document.querySelector('.wraplogini')
-
-        if (cookies) {
-
-          touxiang.style.color = 'red';
-          touxiang.style.fontWeight = 900;
-          
-          
-         }
-
-      },1000)
-
-
-
       var setLogin = window.setInterval(function(){
           var cookies = document.cookie;
-          // var touxiang = document.querySelector('.wraplogini')
-          
+          var touxiang = document.querySelector('.wraplogini')
           if(cookies){
-            
-            // touxiang.style.color = 'red';
-            // touxiang.style.fontWeight = 900;
-            // touxiang.style.backgroundColor= '#ffffff';
+            touxiang.style.color= 'blue';
             clearInterval(setLogin)
             return
           }else{

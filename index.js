@@ -72,6 +72,10 @@ router
   .get("/store", context => {
     context.type = "html";
     context.body = fs.readFileSync("./static/html/store.html");
+  })
+  .get("/phone", context => {
+    context.type = "html";
+    context.body = fs.readFileSync("./static/html/index-phone.html");
   });
 app.listen(8080, "localhost", () => {
   console.log("starting");

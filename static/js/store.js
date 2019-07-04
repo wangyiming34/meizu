@@ -317,4 +317,52 @@ window.onload = function() {
       }
     };
   }
+
+  var kuaili1 = document.getElementsByClassName("kuaili1");
+
+  for (let i = 0; i < kuaili1.length; i++) {
+    kuaili1[i].onclick = function() {
+      console.log(i);
+      for (var j = 0; j < kuaili1.length; j++) {
+        kuaili1[j].classList.remove("black");
+      }
+
+      kuaili1[i].classList.add("black");
+    };
+  }
+
+  var huabeis = document.getElementsByClassName("huabeis");
+
+  var jia = document.getElementById("jia");
+  var jian = document.getElementById("jian");
+  var shuzi = document.getElementById("shuzi");
+  jia.onclick = function() {
+    if (shuzi.innerHTML < 4) {
+      shuzi.innerHTML = ++shuzi.innerHTML;
+      for (let i = 0; i < huabeis.length; i++) {
+        // var a = shuzi.innerHTML * huabeis[i].innerHTML;
+
+        huabeis[i].innerHTML *= shuzi.innerHTML;
+      }
+    }
+  };
+
+  jian.onclick = function() {
+    if (shuzi.innerHTML > 1 && shuzi.innerHTML <= 4) {
+      for (let i = 0; i < huabeis.length; i++) {
+        // var a = shuzi.innerHTML * huabeis[i].innerHTML;
+        huabeis[i].innerHTML /= shuzi.innerHTML;
+      }
+      shuzi.innerHTML = --shuzi.innerHTML;
+    }
+  };
+
+  // var storeimg = document.querySelectorAll("#store-footer img");
+  // for (let i = 0; i < storeimg.length; i++) {
+  //   storeimg[i].onmouseover = function() {
+  //     console.log(storeimg[i]);
+  //     storeimg[i].style.height = 200 + "px";
+  //     storeimg[i].style.width = 200 + "px";
+  //   };
+  // }
 };
